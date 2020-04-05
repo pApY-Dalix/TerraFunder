@@ -1,0 +1,26 @@
+main: fr.terrafunder.Terrafunder
+version: 1.0
+name: Terrafunder
+
+commands:
+  Launch:
+    description: Permet de le lancement ou l'arrêt de la partie
+    usage: /Launch <Start/Stop>
+  Configure:
+    description: Permet de préparer les teams
+    usage: /Configure
+  Alert:
+    description: Permet de créer une Alerte
+    usage: /Alert <arguments>
+  Addplayer:
+    description: Permet de rajouter un player à une team
+    usage: /AddPlayer <Team> <Player>
+  Border:
+    description: Permet de situer la bordure
+    usage: /Border <Size> <World>
+  Chest:
+    description: Permet de créer un chest
+    usage: /Chest
+  Day:
+    description: Permet de rajouter du temps
+    usage: /Day
