@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="TerraFunderTest:jar">
+    <output-path>$PROJECT_DIR$/../../Bureau/Serveur Test/plugins</output-path>
+    <root id="archive" name="TerraFunder.jar">
+      <element id="module-output" name="TerraFunder" />
+    </root>
+  </artifact>
+</component>
