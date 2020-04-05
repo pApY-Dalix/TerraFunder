@@ -7,14 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="106fb94a-feff-4e24-9777-3fb690ae8838" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/TerraFunderTest_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/TerraFunder_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/TerraFunder_jar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/spigot_1_8_8_R0_1_SNAPSHOT_latest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/spigot_1_8_8_R0_1_SNAPSHOT_latest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Terrafunder.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Terrafunder.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Terrafunder/config.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Terrafunder/plugin.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
