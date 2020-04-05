@@ -1,37 +1,37 @@
 team:
   orange:
-    name: "DEFENDER"
+    name: "DEFENSEUR"
     color: "GOLD"
     data: 1
   white:
-    name: "EQUIPE"
+    name: "GRIS"
     color: "GRAY"
     data: 7
   lightblue:
-    name: "EQUIPE"
+    name: "BLUE"
     color: "BLUE"
     data: 11
   yellow:
-    name: "EQUIPE"
+    name: "YELLOW"
     color: "YELLOW"
     data: 4
   pink:
-    name: "EQUIPE"
+    name: "ROSE"
     color: "LIGHT_PURPLE"
     data: 6
   purple:
-    name: "EQUIPE"
+    name: "VIOLET"
     color: "DARK_PURPLE"
     data: 10
   aqua:
-    name: "EQUIPE"
+    name: "AQUA"
     color: "AQUA"
     data: 9
   green:
-    name: "EQUIPE"
+    name: "VERT"
     color: "GREEN"
     data: 13
   red:
-    name: "EQUIPE"
+    name: "RED"
     color: "RED"
     data: 14

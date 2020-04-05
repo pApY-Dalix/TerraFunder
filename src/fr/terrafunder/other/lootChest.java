@@ -26,16 +26,33 @@ public class lootChest
         Chest chest = (Chest) location.getBlock().getState();
         Inventory inventory = chest.getInventory();
 
-        String[] item = {"DIAMOND_SWORD","DIAMOND_HELMET","DIAMOND_BOOTS","DIAMOND_CHESTPLATE","DIAMOND_LEGGINGS","BOW","ENDER_PEARL","EXP_BOTTLE","GOLDEN_APPLE","DIAMOND","SADDLE","BOOKSHELF","RABBIT_FOOT","BLAZE_ROD","NETHER_WARTS","GHAST_TEAR","MAGMA_CREAM","FERMENTED_SPIDER_EYE","SPECKLED_MELON","GOLDEN_CARROT"};
-
+        String[] item = {"ENDER_PEARL","EXP_BOTTLE","GOLDEN_APPLE","DIAMOND","SADDLE","BOOKSHELF","RABBIT_FOOT","BLAZE_ROD","NETHER_WARTS","GHAST_TEAR","MAGMA_CREAM","FERMENTED_SPIDER_EYE","SPECKLED_MELON","GOLDEN_CARROT","GLOWSTONE_DUST","STRING","FEATHER","FLINT_AND_STEEL","FLINT","SHEARS","TNT"};
+        String[] armor = {"DIAMOND_HELMET","DIAMOND_BOOTS","DIAMOND_CHESTPLATE","DIAMOND_LEGGINGS"};
+        String[] arms = {"DIAMOND_SWORD","BOW","DIAMOND_PICKAXE"};
         int i = 0;
         int j = rand.nextInt(15);
+
         while (i <= j)
         {
-          int nb_stack = rand.nextInt(4);
-          nb_stack++;
-          inventory.addItem(new ItemStack(Material.valueOf(item[rand.nextInt(item.length)]), nb_stack));
-          i++;
+            int itemorarmororarms = rand.nextInt(2);
+            if (itemorarmororarms == 0)
+            {
+                int nb_stack = rand.nextInt(2);
+                nb_stack++;
+                inventory.addItem(new ItemStack(Material.valueOf(item[rand.nextInt(item.length)]), nb_stack));
+                i++;
+            }
+            else if(itemorarmororarms == 1)
+            {
+                inventory.addItem(new ItemStack(Material.valueOf(armor[rand.nextInt(item.length)]), 1));
+                i++;
+            }
+            else if(itemorarmororarms == 2)
+            {
+                inventory.addItem(new ItemStack(Material.valueOf(arms[rand.nextInt(item.length)]), 1));
+                i++;
+            }
+
         }
         if (j >= 10)
         {
