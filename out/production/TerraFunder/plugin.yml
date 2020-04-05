@@ -6,21 +6,31 @@ commands:
   Launch:
     description: Permet de le lancement ou l'arrêt de la partie
     usage: /Launch <Start/Stop>
+    permission: perm.use
   Configure:
     description: Permet de préparer les teams
     usage: /Configure
+    permission: perm.use
   Alert:
     description: Permet de créer une Alerte
     usage: /Alert <arguments>
+    permission: perm.use
   Addplayer:
     description: Permet de rajouter un player à une team
     usage: /AddPlayer <Team> <Player>
+    permission: perm.use
   Border:
     description: Permet de situer la bordure
     usage: /Border <Size> <World>
+    permission: perm.use
   Chest:
     description: Permet de créer un chest
     usage: /Chest
+    permission: perm.use
   Day:
     description: Permet de rajouter du temps
     usage: /Day
+    permission: perm.use
+  Rule:
+    description: Règle du Terrafunder
+    usage: /rule <1> ou <2> ou <3>

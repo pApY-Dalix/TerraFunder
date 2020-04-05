@@ -26,6 +26,7 @@ public class commandRule implements CommandExecutor {
                     commandSender.sendMessage("> §3Au minimum 1 §adéfenseur §3doit mourir (pvp) pour récupérer le bloc §ad'émeraude");
                     commandSender.sendMessage("> §3Les §6défenseurs ont le droit de placer le bloc §ad'émeraude §3n'importe où dans le château, mais une face du bloc doit être visible");
                     commandSender.sendMessage("Les attaquants ne peuvent qu’attaquer à partir du §c§ljour 4 !");
+                    return true;
                 }
                 if(args[0] == "2")
                 {
@@ -35,6 +36,7 @@ public class commandRule implements CommandExecutor {
                     commandSender.sendMessage("> §3Bordure de map 1500 blocs. Réduit a 500 blocs jour 5");
                     commandSender.sendMessage("> §3Tous technique d'attaques sont autorisées");
                     commandSender.sendMessage("> §3Tous technique d'attaques sont autorisées");
+                    return true;
 
                 }
                 if(args[0] == "3")
@@ -44,6 +46,7 @@ public class commandRule implements CommandExecutor {
                     commandSender.sendMessage("Friendly Fire désactiver");
                     commandSender.sendMessage("Les attaquants ont les droits de casser TOUS les blocs du château");
                     commandSender.sendMessage("Pas de limite de stuff");
+                    return true;
                 }
             }
         }
