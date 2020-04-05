@@ -2,23 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="389e3d64-0945-4c96-9989-c7eb125e03ad" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TerraFunder1.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/TerraFunder_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/dalix.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/spigot_1_8_8_R0_1_SNAPSHOT_latest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/spigot_1_8_8_R0_1_SNAPSHOT_latest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/fr/terrafunder/command/commandRule.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/config.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fr/terrafunder/other/lootChest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/terrafunder/other/lootChest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fr/terrafunder/Terrafunder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/terrafunder/Terrafunder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/plugin.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -33,6 +32,11 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
   </component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="fr.terrafunder.command" />
+    </key>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -45,5 +49,15 @@
       <updated>1586114055117</updated>
     </task>
     <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="605" y="139" key="#com.intellij.ide.util.MemberChooser" timestamp="1586114897204">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="605" y="139" key="#com.intellij.ide.util.MemberChooser/0.0.1600.860@0.0.1600.860" timestamp="1586114897204" />
+    <state x="530" y="206" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1586114822021">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="530" y="206" key="#com.intellij.ide.util.PackageChooserDialog/0.0.1600.860@0.0.1600.860" timestamp="1586114822021" />
   </component>
 </project>

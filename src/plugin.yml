@@ -31,3 +31,6 @@ commands:
     description: Permet de rajouter du temps
     usage: /Day
     permission: perm.use
+  Rule:
+    description: Règle du Terrafunder
+    usage: /rule <1> ou <2> ou <3>

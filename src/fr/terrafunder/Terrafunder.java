@@ -26,6 +26,7 @@ public class Terrafunder extends JavaPlugin {
         getCommand("Border").setExecutor(new commandBorder());
         getCommand("Chest").setExecutor(new commandCreateChest());
         getCommand("Day").setExecutor(new commandDay());
+        getCommand("Rule").setExecutor(new commandRule());
         getServer().getPluginManager().registerEvents(new eventPlayerJoin(), this);
         getServer().getPluginManager().registerEvents(new eventPlayerChooseTeam(), this);
         getServer().getPluginManager().registerEvents(new eventChat(), this);
