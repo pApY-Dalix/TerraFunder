@@ -4,6 +4,8 @@
       <root url="jar://$PROJECT_DIR$/lib/spigot-1.8.8-R0.1-SNAPSHOT-latest.jar!/" />
     </CLASSES>
     <JAVADOC />
-    <SOURCES />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/lib/spigot-1.8.8-R0.1-SNAPSHOT-latest.jar!/" />
+    </SOURCES>
   </library>
 </component>

@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="TerraFunder:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="759f28eb-8203-4275-9afe-891ce62065f8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/lib.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="106fb94a-feff-4e24-9777-3fb690ae8838" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/TerraFunderTest_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/TerraFunder_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/TerraFunder_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/spigot_1_8_8_R0_1_SNAPSHOT_latest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/spigot_1_8_8_R0_1_SNAPSHOT_latest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Terrafunder.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Terrafunder.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Terrafunder.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Terrafunder/config.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Terrafunder/plugin.yml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,7 +24,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="1a8KNEbeMvNeha2NPEGUclt9HxA" />
+  <component name="ProjectId" id="1a8LtYflEceSqIzzm39DAkqcDDi" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -26,6 +33,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/spigot-1.8.8-R0.1-SNAPSHOT-latest.jar!/" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -35,18 +43,30 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="759f28eb-8203-4275-9afe-891ce62065f8" name="Default Changelist" comment="" />
-      <created>1586111738598</created>
+      <changelist id="106fb94a-feff-4e24-9777-3fb690ae8838" name="Default Changelist" comment="" />
+      <created>1586112489095</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1586111738598</updated>
+      <updated>1586112489095</updated>
     </task>
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="440" y="94" key="SettingsEditor" timestamp="1586111852950">
+    <state x="607" y="114" key="CommitChangelistDialog2" timestamp="1586112781604">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="440" y="94" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1586111852950" />
+    <state x="607" y="114" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1586112781604" />
+    <state x="666" y="261" key="FileChooserDialogImpl" timestamp="1586112594544">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="666" y="261" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1586112594544" />
+    <state x="782" y="436" key="Github.CreateGistDialog" timestamp="1586112748321">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="782" y="436" key="Github.CreateGistDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1586112748321" />
+    <state x="440" y="94" key="SettingsEditor" timestamp="1586112599739">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="440" y="94" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1586112599739" />
   </component>
 </project>

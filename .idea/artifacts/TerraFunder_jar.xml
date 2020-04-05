@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
   <artifact type="jar" name="TerraFunder:jar">
-    <output-path>$PROJECT_DIR$/out/artifacts/Terrafunder_jar</output-path>
+    <output-path>$PROJECT_DIR$/out/artifacts/TerraFunder_jar</output-path>
     <root id="archive" name="TerraFunder.jar">
       <element id="module-output" name="TerraFunder" />
     </root>
