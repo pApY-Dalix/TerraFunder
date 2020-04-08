@@ -26,7 +26,7 @@ public class Team {
 
     public ItemStack getTeam()
     {
-        ItemStack item = new ItemStack(Material.WOOL, 1, data);
+        ItemStack item = new ItemStack(Material.BANNER, 1, data);
         ItemMeta itemMeta = item.getItemMeta();
         itemMeta.setDisplayName(ChatColor.valueOf(color) + "Rejoignez la Team " + name);
         item.setItemMeta(itemMeta);

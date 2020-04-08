@@ -48,14 +48,14 @@ public class eventPlayerJoin implements Listener
     public void PlayerLeave (PlayerQuitEvent event)
     {
         Player player = event.getPlayer();
-        for (Team team : MakeTeam.getTeams())
-        {
-            if (team.getPlayer().contains(player))
-            {
-                team.rmPlayer(player);
-                event.setQuitMessage(ChatColor.valueOf(team.getColor()) + player.getDisplayName() + " à quitter votre team");
-            }
-        }
+        //for (Team team : MakeTeam.getTeams())
+       // {
+         //   if (team.getPlayer().contains(player))
+          //  {
+           //     team.rmPlayer(player);
+            //    event.setQuitMessage(ChatColor.valueOf(team.getColor()) + player.getDisplayName() + " à quitter votre team");
+           // }
+        //}
         event.setQuitMessage("§7[§4-§7] " + player.getDisplayName());
     }
 }

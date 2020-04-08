@@ -5,6 +5,7 @@ import fr.terrafunder.team.MakeTeam;
 import fr.terrafunder.team.Team;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.entity.Arrow;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -34,12 +35,13 @@ public class eventFight implements Listener
                         event.setCancelled(true);
                         return;
                     }
-                    if (sbAll.day < 2)
+                    if (sbAll.day < 3)
                     {
-                        playerDamager.sendMessage(ChatColor.valueOf(team.getColor()) + "Pas de baston avant le jours 2, BAKA !");
+                        playerDamager.sendMessage("§cPvp pas encore actif ! Il faut attendre le jour 3 !");
                         event.setCancelled(true);
                         return;
                     }
+
                 }
                 for (Team team : MakeTeam.getTeams())
                 {
@@ -65,6 +67,7 @@ public class eventFight implements Listener
         for (Player player : Bukkit.getOnlinePlayers())
         {
             if (event.getEntity().getType() == player.getType())
+
             {
                 playerVictim = player;
             }
@@ -79,9 +82,9 @@ public class eventFight implements Listener
                         event.setCancelled(true);
                         return;
                     }
-                    if (sbAll.day < 2)
+                    if (sbAll.day < 3 && event.getEntity()instanceof Arrow)
                     {
-                        playerDamager.sendMessage(ChatColor.valueOf(team.getColor()) + "Pas de baston avant le jours 2, BAKA !");
+                        playerDamager.sendMessage("§cPvp pas encore actif ! Il faut attendre le jour 3 !");
                         event.setCancelled(true);
                         return;
                     }

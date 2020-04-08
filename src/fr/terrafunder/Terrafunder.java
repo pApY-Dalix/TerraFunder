@@ -18,7 +18,7 @@ public class Terrafunder extends JavaPlugin {
     @Override
     public void onEnable()
     {
-        Bukkit.broadcastMessage("-------- Terrafunder On ---------");
+        Bukkit.broadcastMessage("§a-------- Terrafunder On ---------");
         getCommand("Launch").setExecutor(new commandLaunch());
         getCommand("Configure").setExecutor(new commandConfigure());
         getCommand("Alert").setExecutor(new commandAlert());
@@ -66,7 +66,7 @@ public class Terrafunder extends JavaPlugin {
     @Override
     public void onDisable()
     {
-        Bukkit.broadcastMessage("------- Terrafunder Off --------");
+        Bukkit.broadcastMessage("§c------- Terrafunder Off --------");
         super.onDisable();
     }
 }

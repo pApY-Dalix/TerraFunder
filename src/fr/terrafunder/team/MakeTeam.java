@@ -79,7 +79,7 @@ public class MakeTeam
         int nb = 0;
         for (Team team : teams)
         {
-            if (team.getData() != 1)
+            if (team.getData() != 14)
             {
                 nb += team.getSize();
             }
@@ -97,7 +97,7 @@ public class MakeTeam
         int nb = 0;
         for (Team team : teams)
         {
-            if (team.getData() == 1)
+            if (team.getData() == 14)
             {
                 nb += team.getSize();
             }
@@ -105,7 +105,7 @@ public class MakeTeam
         if (nb == 0 && commandLaunch.Launch && !eventDeath.defenderDeath)
         {
             eventDeath.defenderDeath = true;
-            Bukkit.broadcastMessage("§c§l> [SERVEUR] Les Attaquant peuvent prendre le bloc d'émeraude !");
+            Bukkit.broadcastMessage("§c§l> [SERVEUR] §cLes §f§lAttaquants §cpeuvent prendre le bloc §ad'émeraude !");
         }
         return nb;
     }

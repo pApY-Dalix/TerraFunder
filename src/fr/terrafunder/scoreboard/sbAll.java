@@ -47,7 +47,7 @@ public class sbAll
             Score Info = panel.getScore(ChatColor.DARK_RED + "Online > " + Bukkit.getOnlinePlayers().size());
             Score Timer;
             Score NbAttak = panel.getScore("§lAttaquant > " + MakeTeam.nbAttaquant());
-            Score NbDef = panel.getScore("§6Defender > " + MakeTeam.nbDefender());
+            Score NbDef = panel.getScore("§6Defenseur > " + MakeTeam.nbDefender());
 
             if (commandLaunch.Launch && !etatGames)
             {
@@ -100,20 +100,24 @@ public class sbAll
             if (oldDay != day)
             {
                 World world = Bukkit.getWorld("world");
-                Bukkit.broadcastMessage("§b§l------Fin du jour " + day + "-------");
+                Bukkit.broadcastMessage("§b------ Fin du jour " + day + " -------");
+                Bukkit.broadcastMessage("  ");
                 lootChest.chest();
                 world.playSound(player.getLocation(), Sound.CAT_MEOW, 1.0F,1.0F);
-                if (day == 2)
+                if (day == 3)
                 {
-                    Bukkit.broadcastMessage("§c§l------PVP Actif-------");
+                    Bukkit.broadcastMessage("§c------ PVP Actif -------");
+                    Bukkit.broadcastMessage("  ");
                 }
                 if (day == 4)
                 {
-                    Bukkit.broadcastMessage("§c§l------Attaque du Chateau Disponible-------");
+                    Bukkit.broadcastMessage("§c------ Attaque du Château Disponible -------");
+                    Bukkit.broadcastMessage("  ");
                 }
                 if (day == 5)
                 {
-                    Bukkit.broadcastMessage("§c§l------La Border Réduit-------");
+                    Bukkit.broadcastMessage("§c------ La Border Réduit -------");
+                    Bukkit.broadcastMessage("  ");
                     border.borderCreate(500, world);
                 }
                 oldDay = day;

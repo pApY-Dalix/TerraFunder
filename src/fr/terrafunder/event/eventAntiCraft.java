@@ -49,4 +49,18 @@ public class eventAntiCraft implements Listener
             event.setCancelled(true);
         }
     }
+
+    @EventHandler
+    public void Banner (CraftItemEvent event)
+    {
+        Player player = (Player) event.getWhoClicked();
+        ItemStack itemStack = event.getRecipe().getResult();
+        if (itemStack.getType() == Material.BANNER)
+        {
+            Bukkit.broadcastMessage(ChatColor.DARK_RED + "§l> [SERVEUR] " + player.getDisplayName() + " Les bannières on était désactiver");
+            player.setHealth(player.getHealth() - 1);
+            event.setCancelled(true);
+        }
+    }
+
 }

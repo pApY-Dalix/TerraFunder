@@ -32,12 +32,12 @@ public class eventBreackEmerald implements Listener
                     }
                     else if(!team.getColor().equals("GOLD") && sbAll.day < 4)
                     {
-                        Bukkit.broadcastMessage(ChatColor.valueOf(team.getColor()) + team.getName() + "§c§l Attendez le jours 4 ou plus");
+                        Bukkit.broadcastMessage(ChatColor.valueOf(team.getColor()) + team.getName() + "§c§l Attendez le jours 4");
                         event.setCancelled(true);
                     }
                     else
                     {
-                        Bukkit.broadcastMessage(ChatColor.valueOf(team.getColor()) + team.getName() + "§c§l ont pris le bloc d'émeraude");
+                        Bukkit.broadcastMessage("§c§lLa team " + ChatColor.valueOf(team.getColor()) + team.getName() + "§c§l ont pris le bloc §ad'émeraude");
                     }
                 }
             }

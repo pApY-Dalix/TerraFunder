@@ -18,7 +18,7 @@ public class eventPlayerChooseTeam implements Listener
     {
         Player player = (Player) event.getWhoClicked();
         ItemStack itemStack = event.getCurrentItem();
-        if (itemStack != null && itemStack.getType() == Material.WOOL)
+        if (itemStack != null && itemStack.getType() == Material.BANNER)
         {
             for (Team team : MakeTeam.getTeams())
             {
@@ -41,7 +41,7 @@ public class eventPlayerChooseTeam implements Listener
     {
         Player player = (Player) event.getPlayer();
         ItemStack itemStack = event.getItem();
-        if (itemStack != null && itemStack.getType() == Material.WOOL)
+        if (itemStack != null && itemStack.getType() == Material.BANNER)
         {
             for (Team team : MakeTeam.getTeams())
             {

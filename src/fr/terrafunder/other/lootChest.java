@@ -12,13 +12,31 @@ import java.util.Random;
 
 public class lootChest
 {
-    public static void chest()
+    public static int chest()
     {
         Random rand = new Random();
         World world = Bukkit.getWorld("world");
         int _coord = (int) world.getWorldBorder().getSize() / 2;
         int x = rand.nextInt(_coord);
         int z = rand.nextInt(_coord);
+        int pos_ou_neg = rand.nextInt(4);
+        if (pos_ou_neg == 0) {
+            x = x * -1;
+            z = z * -1;
+        }
+        if (pos_ou_neg == 1) {
+            x = x * 1;
+            z = z * 1;
+        }
+        if (pos_ou_neg == 2) {
+            x = x * -1;
+            z = z * 1;
+        }
+        if (pos_ou_neg == 3) {
+            x = x * 1;
+            z = z * -1;
+        }
+
         int y = Bukkit.getWorld("world").getHighestBlockYAt(x, z);
 
         Location location = new Location(world, x, y, z);
@@ -26,45 +44,59 @@ public class lootChest
         Chest chest = (Chest) location.getBlock().getState();
         Inventory inventory = chest.getInventory();
 
-        String[] item = {"ENDER_PEARL","EXP_BOTTLE","GOLDEN_APPLE","DIAMOND","SADDLE","BOOKSHELF","RABBIT_FOOT","BLAZE_ROD","NETHER_WARTS","GHAST_TEAR","MAGMA_CREAM","FERMENTED_SPIDER_EYE","SPECKLED_MELON","GOLDEN_CARROT","GLOWSTONE_DUST","STRING","FEATHER","FLINT_AND_STEEL","FLINT","SHEARS","TNT"};
-        String[] armor = {"DIAMOND_HELMET","DIAMOND_BOOTS","DIAMOND_CHESTPLATE","DIAMOND_LEGGINGS"};
-        String[] arms = {"DIAMOND_SWORD","BOW","DIAMOND_PICKAXE"};
+        String[] item = {"ENDER_PEARL","EXP_BOTTLE","GOLDEN_APPLE","DIAMOND","SADDLE","BOOKSHELF","FERMENTED_SPIDER_EYE","SPECKLED_MELON","FLINT_AND_STEEL","FLINT","SHEARS","TNT"};
+        String[] armor = {"DIAMOND_BOOTS","DIAMOND_LEGGINGS","RABBIT_FOOT","BLAZE_ROD","NETHER_WARTS","GHAST_TEAR","MAGMA_CREAM"};
+        String[] arms = {"DIAMOND_CHESTPLATE","DIAMOND_SWORD","BOW","DIAMOND_PICKAXE","DIAMOND_HELMET","GOLDEN_CARROT","GLOWSTONE_DUST","STRING","FEATHER",};
         int i = 0;
         int j = rand.nextInt(15);
 
         while (i <= j)
         {
-            int itemorarmororarms = rand.nextInt(2);
+            int itemorarmororarms = rand.nextInt(3);
             if (itemorarmororarms == 0)
             {
                 int nb_stack = rand.nextInt(2);
                 nb_stack++;
                 inventory.addItem(new ItemStack(Material.valueOf(item[rand.nextInt(item.length)]), nb_stack));
                 i++;
+
             }
             else if(itemorarmororarms == 1)
             {
-                inventory.addItem(new ItemStack(Material.valueOf(armor[rand.nextInt(item.length)]), 1));
+                inventory.addItem(new ItemStack(Material.valueOf(armor[rand.nextInt(armor.length)]), 1));
+                int nb_stack = rand.nextInt(2);
+                nb_stack++;
+                inventory.addItem(new ItemStack(Material.valueOf(item[rand.nextInt(item.length)]), nb_stack));
                 i++;
+
             }
             else if(itemorarmororarms == 2)
             {
-                inventory.addItem(new ItemStack(Material.valueOf(arms[rand.nextInt(item.length)]), 1));
+                inventory.addItem(new ItemStack(Material.valueOf(arms[rand.nextInt(arms.length)]), 1));
+                int nb_stack = rand.nextInt(2);
+                nb_stack++;
+                inventory.addItem(new ItemStack(Material.valueOf(item[rand.nextInt(item.length)]), nb_stack));
                 i++;
+
             }
+
 
         }
         if (j >= 10)
         {
             Bukkit.broadcastMessage("§eUn §c§lGROS §ecoffre est apparue en §fx §6> " + x + ", §fy §6> " + y + ", §fz §6> " + z);
+            Bukkit.broadcastMessage("  ");
         }
         else if (j > 5)
         {
             Bukkit.broadcastMessage("§eUn coffre §a§lMOYEN §eest apparue en §fx §6> " + x + ", §fy §6> " + y + ", §fz §6> " + z);
+            Bukkit.broadcastMessage("  ");
         }
         else
         {
             Bukkit.broadcastMessage("§eUn coffre est apparue en §fx §6> " + x + ", §fy §6> " + y + ", §fz §6> " + z);
+            Bukkit.broadcastMessage("  ");
         }
+        return _coord;
     }
 }

@@ -17,7 +17,7 @@ public class commandDay implements CommandExecutor{
 			{
 				if (label.equalsIgnoreCase("Day"))
 				{
-					commandSender.sendMessage("§eLe temps est avancer de 10 Minutes");
+					commandSender.sendMessage("§eJour suivant");
 					sbAll.day += 1;
 					return  true;
 				}
