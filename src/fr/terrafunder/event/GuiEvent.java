@@ -43,11 +43,7 @@ public class GuiEvent implements Listener {
         if (it.getType() == Material.CHEST && it.hasItemMeta() && it.getItemMeta().hasDisplayName() && it.getItemMeta().getDisplayName().equalsIgnoreCase("§6Sélecteur de team"))
         {
             Inventory inv = Bukkit.createInventory(null, 45, "§6Sélecteur de team");
-<<<<<<< Updated upstream
-            ItemStack glass = new ItemStack(Material.STAINED_GLASS_PANE,1);
-=======
-            ItemStack glas = new ItemStack(Material.STAINED_GLASS_PANE,1, (byte) 8);
->>>>>>> Stashed changes
+            ItemStack glass = new ItemStack(Material.STAINED_GLASS_PANE,1, (byte)8);
             int i = 0;
             while (i < 10) {
                 inv.setItem(i, glass);
@@ -63,14 +59,8 @@ public class GuiEvent implements Listener {
                 inv.setItem(j, glass);
                 j++;
             }
-<<<<<<< Updated upstream
             inv.setItem(20, chooseteam());
-=======
 
-            inv.setItem(20, choseteam());
-
-
->>>>>>> Stashed changes
             player.openInventory(inv);
         }
     }
