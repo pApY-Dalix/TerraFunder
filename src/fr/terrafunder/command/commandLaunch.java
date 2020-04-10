@@ -1,6 +1,5 @@
 package fr.terrafunder.command;
 
-import fr.terrafunder.other.theBorder;
 import fr.terrafunder.team.MakeTeam;
 import fr.terrafunder.team.Team;
 import org.bukkit.*;
@@ -24,7 +23,6 @@ public class commandLaunch implements CommandExecutor {
     private int i;
     private int j;
     public static boolean Launch = false;
-    private theBorder Border = new theBorder();
 
     @Override
     public boolean onCommand(CommandSender commandSender, Command command, String label, String[] args)
@@ -33,7 +31,6 @@ public class commandLaunch implements CommandExecutor {
         {
             if (commandSender instanceof Player)
             {
-                World world = ((Player) commandSender).getWorld();
                 if (args[0].equalsIgnoreCase("Start"))
                 {
                     if (!Launch && MakeTeam.verificationTeam)
