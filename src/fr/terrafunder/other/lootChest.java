@@ -48,11 +48,12 @@ public class lootChest
         String[] armor = {"DIAMOND_BOOTS","DIAMOND_LEGGINGS","RABBIT_FOOT","BLAZE_ROD","NETHER_WARTS","GHAST_TEAR","MAGMA_CREAM"};
         String[] arms = {"DIAMOND_CHESTPLATE","DIAMOND_SWORD","BOW","DIAMOND_PICKAXE","DIAMOND_HELMET","GOLDEN_CARROT","GLOWSTONE_DUST","STRING","FEATHER",};
         int i = 0;
-        int j = rand.nextInt(15);
+        int j = rand.nextInt(20);
+        int itemorarmororarms = rand.nextInt(3);
 
         while (i <= j)
         {
-            int itemorarmororarms = rand.nextInt(3);
+
             if (itemorarmororarms == 0)
             {
                 int nb_stack = rand.nextInt(2);
@@ -82,12 +83,12 @@ public class lootChest
 
 
         }
-        if (j >= 10)
+        if (j >= 13)
         {
             Bukkit.broadcastMessage("§eUn §c§lGROS §ecoffre est apparue en §fx §6> " + x + ", §fy §6> " + y + ", §fz §6> " + z);
             Bukkit.broadcastMessage("  ");
         }
-        else if (j > 5)
+        else if (j > 9)
         {
             Bukkit.broadcastMessage("§eUn coffre §a§lMOYEN §eest apparue en §fx §6> " + x + ", §fy §6> " + y + ", §fz §6> " + z);
             Bukkit.broadcastMessage("  ");

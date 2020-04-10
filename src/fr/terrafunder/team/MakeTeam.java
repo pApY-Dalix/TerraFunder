@@ -10,6 +10,7 @@ import org.bukkit.entity.Player;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 public class MakeTeam
 {
@@ -19,18 +20,19 @@ public class MakeTeam
     public static void addPlayer(Player player, Team team)
     {
         player.setPlayerListName(ChatColor.valueOf(team.getColor()) + player.getDisplayName());
-        team.addPlayer(player);
+        team.addPlayer(player, player.getUniqueId());
         player.sendMessage( ChatColor.valueOf(team.getColor()) + "Vous êtes attribué(e) à la team : " + team.getName());
         player.sendMessage( ChatColor.valueOf(team.getColor()) + "Nombre de player dans cette team : " + team.getSize());
     }
 
-    public static void rmPlayer(Player player)
+    public static void rmPlayer(Player player, UUID uuid)
     {
         for (Team team : teams)
         {
-            if (team.getPlayer().contains(player))
+            if (team.getPlayer().contains(player) && team.getUuids().contains(uuid))
             {
-                team.rmPlayer(player);
+                team.rmPlayer(player, uuid);
+                Bukkit.broadcastMessage("Suppression Effectué");
             }
         }
     }
@@ -105,7 +107,7 @@ public class MakeTeam
         if (nb == 0 && commandLaunch.Launch && !eventDeath.defenderDeath)
         {
             eventDeath.defenderDeath = true;
-            Bukkit.broadcastMessage("§c§l> [SERVEUR] §cLes §f§lAttaquants §cpeuvent prendre le bloc §ad'émeraude !");
+            Bukkit.broadcastMessage("§c§l> [SERVEUR] §cLes §f§lAttaquants §cpeuvent prendre le bloc                 §ad'émeraude !");
         }
         return nb;
     }

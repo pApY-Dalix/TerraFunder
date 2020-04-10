@@ -31,7 +31,7 @@ public class eventDeath implements Listener
             if (team.getPlayer().contains(playerDeath))
             {
                 _colorVictim = team.getColor();
-                team.rmPlayer(playerDeath);
+                team.rmPlayer(playerDeath, playerDeath.getUniqueId());
             }
             else if (team.getPlayer().contains(playerKiller))
             {

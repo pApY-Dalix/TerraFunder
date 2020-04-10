@@ -36,6 +36,7 @@ public class Terrafunder extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new eventWin(), this);
         getServer().getPluginManager().registerEvents(new eventWeatherClear(), this);
         getServer().getPluginManager().registerEvents(new eventBreackEmerald(), this);
+        getServer().getPluginManager().registerEvents(new GuiEvent(), this);
         saveDefaultConfig();
         WorldBorder worldBorder = Bukkit.getWorld("world").getWorldBorder();
         worldBorder.setSize(1500);

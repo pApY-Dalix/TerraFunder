@@ -34,7 +34,7 @@ public class commandAddPlayer implements CommandExecutor
                             {
                                 if (teammate.getPlayer().contains(player))
                                 {
-                                    MakeTeam.rmPlayer(player);
+                                    MakeTeam.rmPlayer(player, player.getUniqueId());
                                     player.sendMessage("§c§l>[SERVEUR] Vous avez était retirez de la team " + teammate.getName());
                                 }
                                 else

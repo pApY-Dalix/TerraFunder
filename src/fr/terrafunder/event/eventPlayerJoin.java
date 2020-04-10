@@ -3,6 +3,7 @@ package fr.terrafunder.event;
 import fr.terrafunder.command.commandLaunch;
 import fr.terrafunder.team.MakeTeam;
 import fr.terrafunder.team.Team;
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.GameMode;
 import org.bukkit.entity.Player;
@@ -11,6 +12,8 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.inventory.Inventory;
+
+import java.util.UUID;
 
 public class eventPlayerJoin implements Listener
 {
@@ -23,14 +26,16 @@ public class eventPlayerJoin implements Listener
         {
             for(Team team : MakeTeam.getTeams())
             {
-                if(team.getPlayer().contains(player))
+                for (UUID uuid : team.getUuids())
                 {
-                    return;
-                }
-                else
-                {
-                    player.setHealth(20);
-                    player.setFoodLevel(20);
+                    if(player.getUniqueId().equals(uuid))
+                    {
+                        MakeTeam.rmPlayer(player, player.getUniqueId());
+                        MakeTeam.addPlayer(player, team);
+                    }
+                    else
+                    {
+                    }
                 }
             }
         }
@@ -48,14 +53,6 @@ public class eventPlayerJoin implements Listener
     public void PlayerLeave (PlayerQuitEvent event)
     {
         Player player = event.getPlayer();
-        //for (Team team : MakeTeam.getTeams())
-       // {
-         //   if (team.getPlayer().contains(player))
-          //  {
-           //     team.rmPlayer(player);
-            //    event.setQuitMessage(ChatColor.valueOf(team.getColor()) + player.getDisplayName() + " à quitter votre team");
-           // }
-        //}
         event.setQuitMessage("§7[§4-§7] " + player.getDisplayName());
     }
 }

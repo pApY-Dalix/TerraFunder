@@ -10,6 +10,8 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.potion.PotionEffect;
+import org.bukkit.potion.PotionEffectType;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -87,14 +89,15 @@ public class commandLaunch implements CommandExecutor {
         i = 0;
         j = 0;
         World world = Bukkit.getWorld("world");
-        Bukkit.broadcastMessage(ChatColor.RED +"> [SERVEUR] Préparation au lancement du §a§lTerrafunder !");
+        Bukkit.broadcastMessage(ChatColor.RED +"> §l[SERVEUR] §cPréparation au lancement du §a§lTerrafunder ... ");
         for (Team team : MakeTeam.getTeams())
         {
             y = world.getHighestBlockYAt((int) x[i], (int) z[j]);
-            Location location = new Location(world, x[i], y, z[j]);
+            Location location = new Location(world, x[i], y+3, z[j]);
             players = team.getPlayer();
             for (Player player : players)
             {
+                player.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 20*62, 255));
                 player.teleport(location);
                 player.setGameMode(GameMode.SURVIVAL);
                 player.setHealth(20);
@@ -102,13 +105,17 @@ public class commandLaunch implements CommandExecutor {
                 world.setDifficulty(Difficulty.PEACEFUL);
                 Inventory inventory = player.getInventory();
                 inventory.clear();
+                player.setExp(0);
                 inventory.addItem(new ItemStack(Material.COOKED_BEEF, 64));
                 world.setDifficulty(Difficulty.HARD);
             }
             i++;
             j++;
         }
-        Bukkit.broadcastMessage(ChatColor.GOLD + "> [SERVEUR] Téléportation des teams réussie");
+        Bukkit.broadcastMessage("     ");
+        Bukkit.broadcastMessage(ChatColor.GOLD + "> §c§lSERVEUR] §6Bonne chance a §f§lTOUS");
+        Bukkit.broadcastMessage("     ");
+        Bukkit.broadcastMessage("§c> §c§l[SERVEUR] §c1 minute avant les dégàts actif !");
         world.setTime(0);
         Launch = true;
     }
