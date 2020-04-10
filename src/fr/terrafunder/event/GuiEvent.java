@@ -9,6 +9,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
+import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
@@ -42,7 +43,11 @@ public class GuiEvent implements Listener {
         if (it.getType() == Material.CHEST && it.hasItemMeta() && it.getItemMeta().hasDisplayName() && it.getItemMeta().getDisplayName().equalsIgnoreCase("§6Sélecteur de team"))
         {
             Inventory inv = Bukkit.createInventory(null, 45, "§6Sélecteur de team");
+<<<<<<< Updated upstream
             ItemStack glass = new ItemStack(Material.STAINED_GLASS_PANE,1);
+=======
+            ItemStack glas = new ItemStack(Material.STAINED_GLASS_PANE,1, (byte) 8);
+>>>>>>> Stashed changes
             int i = 0;
             while (i < 10) {
                 inv.setItem(i, glass);
@@ -58,8 +63,32 @@ public class GuiEvent implements Listener {
                 inv.setItem(j, glass);
                 j++;
             }
+<<<<<<< Updated upstream
             inv.setItem(20, chooseteam());
+=======
+
+            inv.setItem(20, choseteam());
+
+
+>>>>>>> Stashed changes
             player.openInventory(inv);
+        }
+    }
+    @EventHandler
+    public void onClick(InventoryClickEvent event)
+    {
+        Inventory inv = event.getInventory();
+        Player player = (Player) event.getWhoClicked();
+        ItemStack current = event.getCurrentItem();
+        if (current == null) return;
+        if (inv.getName().equalsIgnoreCase("§6Sélecteur de team"))
+        {
+            event.setCancelled(true);
+            if(current.getType() == Material.BANNER)
+            {
+                player.closeInventory();
+
+            }
         }
     }
 }
