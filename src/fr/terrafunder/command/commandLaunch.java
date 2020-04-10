@@ -18,9 +18,9 @@ import java.util.UUID;
 
 public class commandLaunch implements CommandExecutor {
     private List<Player> players = new ArrayList<>();
-    private double x[] = {92, 650, 650, 650, 0, 0, -650, -650, -650};
+    private double x[] = {92, 650, 650, 650, 0, 0, -649, -650, -650};
     private double y = 0;
-    private double z[] = {72, 650, 0, -650, 650, -650, 650, 0, -650};
+    private double z[] = {72, 650, 0, -650, 650, -646, 650, 0, -650};
     private int i;
     private int j;
     public static boolean Launch = false;
@@ -98,17 +98,19 @@ public class commandLaunch implements CommandExecutor {
                 {
                     if (player.getUniqueId().equals(uuid))
                     {
+                        Bukkit.dispatchCommand(Bukkit.getConsoleSender(),"effect @a clear");
+                        Bukkit.dispatchCommand(Bukkit.getConsoleSender(),"difficulty peaceful");
                         player.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 20*62, 255));
                         player.teleport(location);
                         player.setGameMode(GameMode.SURVIVAL);
                         player.setHealth(20);
                         player.setFoodLevel(20);
-                        world.setDifficulty(Difficulty.PEACEFUL);
                         Inventory inventory = player.getInventory();
                         inventory.clear();
-                        player.setExp(0);
+                        Bukkit.dispatchCommand(Bukkit.getConsoleSender(),"xp -500000l @a");
+                        Bukkit.dispatchCommand(Bukkit.getConsoleSender(),"clear @a");
                         inventory.addItem(new ItemStack(Material.COOKED_BEEF, 64));
-                        world.setDifficulty(Difficulty.HARD);
+                        Bukkit.dispatchCommand(Bukkit.getConsoleSender(),"difficulty easy");
                     } 
                 }
             }

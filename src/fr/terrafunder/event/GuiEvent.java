@@ -82,7 +82,6 @@ public class GuiEvent implements Listener
             if(current.getType() == Material.BANNER && current.hasItemMeta() && current.getItemMeta().hasDisplayName() && current.getItemMeta().getDisplayName().equalsIgnoreCase(ChatColor.GOLD+ "Rejoignez la Team " + "DEFENSEUR"))
             {
                 player.closeInventory();
-                Bukkit.broadcastMessage("Test !");
             }
         }
     }

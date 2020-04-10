@@ -85,17 +85,17 @@ public class lootChest
         }
         if (j >= 13)
         {
-            Bukkit.broadcastMessage("§eUn §c§lGROS §ecoffre est apparue en §fx §6> " + x + ", §fy §6> " + y + ", §fz §6> " + z);
+            Bukkit.broadcastMessage("§eUn §c§lGROS §ecoffre est apparu en §fx §6> " + x + ", §fy §6> " + y + ", §fz §6> " + z);
             Bukkit.broadcastMessage("  ");
         }
         else if (j > 9)
         {
-            Bukkit.broadcastMessage("§eUn coffre §a§lMOYEN §eest apparue en §fx §6> " + x + ", §fy §6> " + y + ", §fz §6> " + z);
+            Bukkit.broadcastMessage("§eUn coffre §a§lMOYEN §eest apparu en §fx §6> " + x + ", §fy §6> " + y + ", §fz §6> " + z);
             Bukkit.broadcastMessage("  ");
         }
         else
         {
-            Bukkit.broadcastMessage("§eUn coffre est apparue en §fx §6> " + x + ", §fy §6> " + y + ", §fz §6> " + z);
+            Bukkit.broadcastMessage("§eUn coffre est apparu en §fx §6> " + x + ", §fy §6> " + y + ", §fz §6> " + z);
             Bukkit.broadcastMessage("  ");
         }
         return _coord;
