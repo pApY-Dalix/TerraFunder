@@ -8,16 +8,17 @@ import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.block.Action;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
-public class GuiEvent implements Listener {
+public class GuiEvent implements Listener
+{
 
-    public ItemStack chooseteam() {
+    public ItemStack chooseteam()
+    {
 
         for (Team team : MakeTeam.getTeams())
         {
@@ -34,7 +35,6 @@ public class GuiEvent implements Listener {
     public void onInteract(PlayerInteractEvent event)
     {
         Player player = event.getPlayer();
-        Action action = event.getAction();
         ItemStack it = event.getItem();
         if (it == null)
         {
@@ -44,8 +44,10 @@ public class GuiEvent implements Listener {
         {
             Inventory inv = Bukkit.createInventory(null, 45, "§6Sélecteur de team");
             ItemStack glass = new ItemStack(Material.STAINED_GLASS_PANE,1, (byte)8);
+
             int i = 0;
-            while (i < 10) {
+            while (i < 10)
+            {
                 inv.setItem(i, glass);
                 i++;
             }
@@ -59,8 +61,8 @@ public class GuiEvent implements Listener {
                 inv.setItem(j, glass);
                 j++;
             }
+            
             inv.setItem(20, chooseteam());
-
             player.openInventory(inv);
         }
     }
@@ -74,10 +76,10 @@ public class GuiEvent implements Listener {
         if (inv.getName().equalsIgnoreCase("§6Sélecteur de team"))
         {
             event.setCancelled(true);
-            if(current.getType() == Material.BANNER)
+            if(current.getType() == Material.BANNER && current.hasItemMeta() && current.getItemMeta().hasDisplayName() && current.getItemMeta().getDisplayName().equalsIgnoreCase(ChatColor.GOLD+ "Rejoignez la Team " + "DEFENSEUR"))
             {
                 player.closeInventory();
-
+                
             }
         }
     }

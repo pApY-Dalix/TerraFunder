@@ -1,7 +1,6 @@
 package fr.terrafunder.event;
 
 import fr.terrafunder.command.commandLaunch;
-import fr.terrafunder.scoreboard.sbAll;
 import fr.terrafunder.team.MakeTeam;
 import fr.terrafunder.team.Team;
 import org.bukkit.*;
