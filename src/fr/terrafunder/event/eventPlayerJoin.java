@@ -3,8 +3,6 @@ package fr.terrafunder.event;
 import fr.terrafunder.command.commandLaunch;
 import fr.terrafunder.team.MakeTeam;
 import fr.terrafunder.team.Team;
-import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
 import org.bukkit.GameMode;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -35,6 +33,7 @@ public class eventPlayerJoin implements Listener
                     }
                     else
                     {
+                        return;
                     }
                 }
             }

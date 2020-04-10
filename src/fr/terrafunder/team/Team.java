@@ -1,14 +1,8 @@
 package fr.terrafunder.team;
 
-import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
-import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.block.Action;
-import org.bukkit.event.player.PlayerInteractEvent;
-import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
@@ -16,11 +10,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
-public class Team implements Listener {
-    private static String name;
-    private static String id;
-    private static String color;
-    private static byte data;
+public class Team implements Listener
+{
+    private String name;
+    private String id;
+    private String color;
+    private byte data;
     private List<UUID> uuids = new ArrayList<>();
     private List<Player> player = new ArrayList<>();
 
@@ -55,7 +50,7 @@ public class Team implements Listener {
         uuids.remove(_uuid);
     }
 
-    public List<Player> getPlayer()
+    public  List<Player> getPlayer()
     {
         return player;
     }
@@ -70,17 +65,17 @@ public class Team implements Listener {
         return player.size();
     }
 
-    public static String getName()
+    public  String getName()
     {
         return name;
     }
 
-    public static String getColor()
+    public  String getColor()
     {
         return color;
     }
 
-    public static byte getData()
+    public byte getData()
     {
         return data;
     }

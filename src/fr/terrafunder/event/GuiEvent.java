@@ -1,5 +1,6 @@
 package fr.terrafunder.event;
 
+import fr.terrafunder.team.MakeTeam;
 import fr.terrafunder.team.Team;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -15,13 +16,17 @@ import org.bukkit.inventory.meta.ItemMeta;
 
 public class GuiEvent implements Listener {
 
-    public ItemStack choseteam() {
+    public ItemStack chooseteam() {
 
-        ItemStack banner = new ItemStack(Material.BANNER, 1, Team.getData());
-        ItemMeta itemMeta = banner.getItemMeta();
-        itemMeta.setDisplayName(ChatColor.valueOf(Team.getColor()) + "Rejoignez la Team " + Team.getName());
-        banner.setItemMeta(itemMeta);
-        return banner;
+        for (Team team : MakeTeam.getTeams())
+        {
+            ItemStack banner = new ItemStack(Material.BANNER, 1, team.getData());
+            ItemMeta itemMeta = banner.getItemMeta();
+            itemMeta.setDisplayName(ChatColor.valueOf(team.getColor()) + "Rejoignez la Team " + team.getName());
+            banner.setItemMeta(itemMeta);
+            return (banner);
+        }
+        return null;
     }
 
     @EventHandler
@@ -53,7 +58,7 @@ public class GuiEvent implements Listener {
                 inv.setItem(j, glass);
                 j++;
             }
-            inv.setItem(20, choseteam());
+            inv.setItem(20, chooseteam());
             player.openInventory(inv);
         }
     }
