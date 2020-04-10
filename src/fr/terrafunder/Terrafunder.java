@@ -3,13 +3,19 @@ package fr.terrafunder;
 import fr.terrafunder.command.*;
 import fr.terrafunder.event.*;
 import fr.terrafunder.scoreboard.sbAll;
+import fr.terrafunder.team.MakeTeam;
+import fr.terrafunder.team.Team;
+
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.GameMode;
 import org.bukkit.WorldBorder;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.plugin.java.JavaPlugin;
+
+import java.util.UUID;
 
 public class Terrafunder extends JavaPlugin {
 
@@ -60,6 +66,19 @@ public class Terrafunder extends JavaPlugin {
             public void run()
             {
                 sbSpawn.sb();
+                for (Team team : MakeTeam.getTeams())
+                {
+                    for (UUID uuid : team.getUuids())
+                    {
+                        for (Player player : Bukkit.getOnlinePlayers())
+                        {
+                            if (player.getUniqueId().equals(uuid))
+                            {
+                                player.setPlayerListName(ChatColor.valueOf(team.getColor()) + player.getDisplayName());
+                            }
+                        }
+                    }
+                }
             }
         }, 0L, 20L);
     }

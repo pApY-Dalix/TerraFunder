@@ -27,12 +27,12 @@ public class eventDeath implements Listener
         }
         for (Team team : MakeTeam.getTeams())
         {
-            if (team.getPlayer().contains(playerDeath))
+            if (team.getUuids().contains(playerDeath.getUniqueId()))
             {
                 _colorVictim = team.getColor();
-                team.rmPlayer(playerDeath, playerDeath.getUniqueId());
+                team.removePlayer(playerDeath.getUniqueId());
             }
-            else if (team.getPlayer().contains(playerKiller))
+            else if (team.getUuids().contains(playerKiller.getUniqueId()))
             {
                 _colorKiller = team.getColor();
             }

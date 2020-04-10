@@ -1,7 +1,6 @@
 package fr.terrafunder.team;
 
 import org.bukkit.Material;
-import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
@@ -17,8 +16,6 @@ public class Team implements Listener
     private String color;
     private byte data;
     private List<UUID> uuids = new ArrayList<>();
-    private List<Player> player = new ArrayList<>();
-
 
     public Team (String Name, String Id, String Color, byte Data)
     {
@@ -28,31 +25,14 @@ public class Team implements Listener
         data = Data;
     }
 
-
-    public ItemStack getTeam()
+    public void addPlayer (UUID _uuid)
     {
-        ItemStack chesteam = new ItemStack(Material.CHEST,1);
-        ItemMeta cChest = chesteam.getItemMeta();
-        cChest.setDisplayName("§6Sélecteur de team");
-        chesteam.setItemMeta(cChest);
-        return chesteam;
-    }
-
-    public void addPlayer (Player _player, UUID _uuid)
-    {
-        player.add(_player);
         uuids.add(_uuid);
     }
 
-    public void rmPlayer (Player _player, UUID _uuid)
+    public void removePlayer (UUID _uuid)
     {
-        player.remove(_player);
         uuids.remove(_uuid);
-    }
-
-    public  List<Player> getPlayer()
-    {
-        return player;
     }
 
     public List<UUID> getUuids()
@@ -62,15 +42,15 @@ public class Team implements Listener
 
     public int getSize()
     {
-        return player.size();
+        return uuids.size();
     }
 
-    public  String getName()
+    public String getName()
     {
         return name;
     }
 
-    public  String getColor()
+    public String getColor()
     {
         return color;
     }

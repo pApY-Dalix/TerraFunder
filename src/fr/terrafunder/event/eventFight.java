@@ -29,7 +29,7 @@ public class eventFight implements Listener
                 playerVictim = (Player) event.getEntity();
                 for (Team team : MakeTeam.getTeams())
                 {
-                    if (team.getPlayer().contains(playerVictim) && team.getPlayer().contains(playerDamager))
+                    if (team.getUuids().contains(playerVictim.getUniqueId()) && team.getUuids().contains(playerDamager.getUniqueId()))
                     {
                         playerDamager.sendMessage(ChatColor.valueOf(team.getColor()) + "Pas de friendly fire, BAKA !");
                         event.setCancelled(true);
@@ -45,7 +45,7 @@ public class eventFight implements Listener
                 }
                 for (Team team : MakeTeam.getTeams())
                 {
-                    if (team.getPlayer().contains(playerVictim))
+                    if (team.getUuids().contains(playerVictim.getUniqueId()))
                     {
                         _colorVictim = team.getColor();
                     }
@@ -76,7 +76,7 @@ public class eventFight implements Listener
                 playerDamager = player;
                 for (Team team : MakeTeam.getTeams())
                 {
-                    if (team.getPlayer().contains(playerVictim) && team.getPlayer().contains(playerDamager))
+                    if (team.getUuids().contains(playerVictim.getUniqueId()) && team.getUuids().contains(playerDamager.getUniqueId()))
                     {
                         playerDamager.sendMessage(ChatColor.valueOf(team.getColor()) + "Pas de friendly fire, BAKA !");
                         event.setCancelled(true);
@@ -91,7 +91,7 @@ public class eventFight implements Listener
                 }
                 for (Team team : MakeTeam.getTeams())
                 {
-                    if (team.getPlayer().contains(playerVictim))
+                    if (team.getUuids().contains(playerVictim.getUniqueId()))
                     {
                         _colorVictim = team.getColor();
                     }

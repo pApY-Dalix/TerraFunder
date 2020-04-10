@@ -14,6 +14,7 @@ import org.bukkit.potion.PotionEffectType;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 public class commandLaunch implements CommandExecutor {
     private List<Player> players = new ArrayList<>();
@@ -91,20 +92,25 @@ public class commandLaunch implements CommandExecutor {
         {
             y = world.getHighestBlockYAt((int) x[i], (int) z[j]);
             Location location = new Location(world, x[i], y+3, z[j]);
-            players = team.getPlayer();
-            for (Player player : players)
+            for (UUID uuid : team.getUuids())
             {
-                player.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 20*62, 255));
-                player.teleport(location);
-                player.setGameMode(GameMode.SURVIVAL);
-                player.setHealth(20);
-                player.setFoodLevel(20);
-                world.setDifficulty(Difficulty.PEACEFUL);
-                Inventory inventory = player.getInventory();
-                inventory.clear();
-                player.setExp(0);
-                inventory.addItem(new ItemStack(Material.COOKED_BEEF, 64));
-                world.setDifficulty(Difficulty.HARD);
+                for (Player player : Bukkit.getOnlinePlayers())
+                {
+                    if (player.getUniqueId().equals(uuid))
+                    {
+                        player.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 20*62, 255));
+                        player.teleport(location);
+                        player.setGameMode(GameMode.SURVIVAL);
+                        player.setHealth(20);
+                        player.setFoodLevel(20);
+                        world.setDifficulty(Difficulty.PEACEFUL);
+                        Inventory inventory = player.getInventory();
+                        inventory.clear();
+                        player.setExp(0);
+                        inventory.addItem(new ItemStack(Material.COOKED_BEEF, 64));
+                        world.setDifficulty(Difficulty.HARD);
+                    } 
+                }
             }
             i++;
             j++;

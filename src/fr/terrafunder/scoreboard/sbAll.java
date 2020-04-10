@@ -86,7 +86,7 @@ public class sbAll
             }
             for (Team team : MakeTeam.getTeams())
             {
-                if (team.getPlayer().contains(player))
+                if (team.getUuids().contains(player.getUniqueId()))
                 {
                     _Team = panel.getScore(ChatColor.valueOf(team.getColor()) + team.getName() + " > " +(String.valueOf(team.getSize())));
                 }

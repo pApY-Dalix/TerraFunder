@@ -27,7 +27,7 @@ public class eventWin implements Listener
         {
             for (Team team : MakeTeam.getTeams())
             {
-                if (team.getPlayer().contains(player) && !team.getColor().equals("GOLD"))
+                if (team.getUuids().contains(player.getUniqueId()) && !team.getColor().equals("GOLD"))
                 {
                     Bukkit.broadcastMessage("§c§l> [SERVEUR] VICTOIRE DE LA TEAM : " + ChatColor.valueOf(team.getColor()) + team.getName());
                     commandLaunch.stop();

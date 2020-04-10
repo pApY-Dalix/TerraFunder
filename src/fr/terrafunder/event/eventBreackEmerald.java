@@ -24,7 +24,7 @@ public class eventBreackEmerald implements Listener
         {
             for (Team team : MakeTeam.getTeams())
             {
-                if (team.getPlayer().contains(player))
+                if (team.getUuids().contains(player.getUniqueId()))
                 {
                     if(!team.getColor().equals("GOLD") && !eventDeath.defenderDeath)
                     {

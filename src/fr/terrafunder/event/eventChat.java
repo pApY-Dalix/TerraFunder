@@ -20,7 +20,7 @@ public class eventChat implements Listener
         Player player = event.getPlayer();
         for (Team team : MakeTeam.getTeams())
         {
-            if(team.getPlayer().contains(player))
+            if(team.getUuids().contains(player.getUniqueId()))
             {
                 _color = team.getColor();
             }

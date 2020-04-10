@@ -20,14 +20,7 @@ public class GuiEvent implements Listener
     public ItemStack chooseteam()
     {
 
-        for (Team team : MakeTeam.getTeams())
-        {
-            ItemStack banner = new ItemStack(Material.BANNER, 1, team.getData());
-            ItemMeta itemMeta = banner.getItemMeta();
-            itemMeta.setDisplayName(ChatColor.valueOf(team.getColor()) + "Rejoignez la Team " + team.getName());
-            banner.setItemMeta(itemMeta);
-            return (banner);
-        }
+        
         return null;
     }
 
@@ -52,8 +45,6 @@ public class GuiEvent implements Listener
                 i++;
             }
             inv.setItem(17, glass);
-            inv.setItem(18, glass);
-            inv.setItem(26, glass);
             inv.setItem(27, glass);
             int j = 35;
             while (j < 45 )
@@ -61,8 +52,20 @@ public class GuiEvent implements Listener
                 inv.setItem(j, glass);
                 j++;
             }
+            j = 18;
+            while (j < 26)
+            {
+                for (Team team : MakeTeam.getTeams())
+                {
+                    ItemStack banner = new ItemStack(Material.BANNER, 1, team.getData());
+                    ItemMeta itemMeta = banner.getItemMeta();
+                    itemMeta.setDisplayName(ChatColor.valueOf(team.getColor()) + "Rejoignez la Team " + team.getName());
+                    banner.setItemMeta(itemMeta);
+                    inv.setItem(j, banner);
+                    j++;
+                }
+            }
             
-            inv.setItem(20, chooseteam());
             player.openInventory(inv);
         }
     }
@@ -79,7 +82,7 @@ public class GuiEvent implements Listener
             if(current.getType() == Material.BANNER && current.hasItemMeta() && current.getItemMeta().hasDisplayName() && current.getItemMeta().getDisplayName().equalsIgnoreCase(ChatColor.GOLD+ "Rejoignez la Team " + "DEFENSEUR"))
             {
                 player.closeInventory();
-                
+                Bukkit.broadcastMessage("Test !");
             }
         }
     }

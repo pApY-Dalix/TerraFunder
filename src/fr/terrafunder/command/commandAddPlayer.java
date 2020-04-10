@@ -32,19 +32,15 @@ public class commandAddPlayer implements CommandExecutor
                         {
                             if (teammate.getId().equals(_team))
                             {
-                                if (teammate.getPlayer().contains(player))
+                                if (teammate.getUuids().contains(player.getUniqueId()))
                                 {
-                                    MakeTeam.rmPlayer(player, player.getUniqueId());
+                                    MakeTeam.rmPlayer(player);
                                     player.sendMessage("§c§l>[SERVEUR] Vous avez était retirez de la team " + teammate.getName());
                                 }
                                 else
                                 {
                                     MakeTeam.addPlayer(player, teammate);
                                     player.sendMessage("§c§l>[SERVEUR] Vous avez était ajoutez de la team " + teammate.getName());
-                                }
-                                if (teammate.getSize() >= 1)
-                                {
-                                    player.teleport(teammate.getPlayer().get(1));
                                 }
                                 player.setGameMode(GameMode.SURVIVAL);
                             }

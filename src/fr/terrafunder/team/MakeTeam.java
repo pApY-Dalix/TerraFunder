@@ -10,7 +10,6 @@ import org.bukkit.entity.Player;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
 
 public class MakeTeam
 {
@@ -19,20 +18,18 @@ public class MakeTeam
 
     public static void addPlayer(Player player, Team team)
     {
-        player.setPlayerListName(ChatColor.valueOf(team.getColor()) + player.getDisplayName());
-        team.addPlayer(player, player.getUniqueId());
+        team.addPlayer(player.getUniqueId());
         player.sendMessage( ChatColor.valueOf(team.getColor()) + "Vous êtes attribué(e) à la team : " + team.getName());
         player.sendMessage( ChatColor.valueOf(team.getColor()) + "Nombre de player dans cette team : " + team.getSize());
     }
 
-    public static void rmPlayer(Player player, UUID uuid)
+    public static void rmPlayer(Player player)
     {
         for (Team team : teams)
         {
-            if (team.getPlayer().contains(player) && team.getUuids().contains(uuid))
+            if (team.getUuids().contains(player.getUniqueId()))
             {
-                team.rmPlayer(player, uuid);
-                Bukkit.broadcastMessage("Suppression Effectué");
+                team.removePlayer(player.getUniqueId());
             }
         }
     }

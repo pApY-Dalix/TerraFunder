@@ -24,9 +24,9 @@ public class eventPlayerChooseTeam implements Listener
             {
                 if (team.getData() == itemStack.getData().getData())
                 {
-                    if(!team.getPlayer().contains(player))
+                    if(!team.getUuids().contains(player.getUniqueId()))
                     {
-                        MakeTeam.rmPlayer(player, player.getUniqueId());
+                        MakeTeam.rmPlayer(player);
                         MakeTeam.addPlayer(player, team);
 
                     }
@@ -47,9 +47,9 @@ public class eventPlayerChooseTeam implements Listener
             {
                 if (team.getData() == itemStack.getData().getData())
                 {
-                    if(!team.getPlayer().contains(player))
+                    if(!team.getUuids().contains(player.getUniqueId()))
                     {
-                        MakeTeam.rmPlayer(player, player.getUniqueId());
+                        MakeTeam.rmPlayer(player);
                         MakeTeam.addPlayer(player, team);
 
                     }
