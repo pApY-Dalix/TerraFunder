@@ -12,12 +12,9 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.UUID;
 
 public class commandLaunch implements CommandExecutor {
-    private List<Player> players = new ArrayList<>();
     private double x[] = {92, 650, 650, 650, 0, 0, -649, -650, -650};
     private double y = 0;
     private double z[] = {72, 650, 0, -650, 650, -646, 650, 0, -650};

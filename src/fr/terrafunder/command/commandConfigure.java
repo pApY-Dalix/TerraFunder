@@ -1,7 +1,6 @@
 package fr.terrafunder.command;
 
 import fr.terrafunder.team.MakeTeam;
-import fr.terrafunder.team.Team;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
