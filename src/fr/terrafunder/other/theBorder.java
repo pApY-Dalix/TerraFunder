@@ -24,6 +24,6 @@ public class theBorder
         }
         worldBorder.setSize(_coord, time);
 
-        Bukkit.broadcastMessage("§c§l> [SERVEUR] La bordure bouge vers " + _coord/2);
+        Bukkit.broadcastMessage("§c§l> [SERVEUR] La bordure bouge en " + _coord/2);
     }
 }

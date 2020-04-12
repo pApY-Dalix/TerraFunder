@@ -56,7 +56,7 @@ public class commandLaunch implements CommandExecutor {
                     }
                     else
                     {
-                        Bukkit.broadcastMessage(ChatColor.RED + "> [SERVEUR] Le $a$lTerraFunder $cn'a pas start :c");
+                        Bukkit.broadcastMessage(ChatColor.RED + "> [SERVEUR] Le §a§lTerraFunder §cn'a pas start :c");
                     }
                     return true;
                 }
@@ -88,7 +88,7 @@ public class commandLaunch implements CommandExecutor {
         for (Team team : MakeTeam.getTeams())
         {
             y = world.getHighestBlockYAt((int) x[i], (int) z[j]);
-            Location location = new Location(world, x[i], y+3, z[j]);
+            Location location = new Location(world, x[i], y+1, z[j]);
             for (UUID uuid : team.getUuids())
             {
                 for (Player player : Bukkit.getOnlinePlayers())

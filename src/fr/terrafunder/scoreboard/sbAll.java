@@ -118,7 +118,7 @@ public class sbAll
                 {
                     Bukkit.broadcastMessage("§c------ La Border Réduit -------");
                     Bukkit.broadcastMessage("  ");
-                    border.borderCreate(500, world);
+                    border.borderCreate(300, world);
                 }
                 oldDay = day;
             }
