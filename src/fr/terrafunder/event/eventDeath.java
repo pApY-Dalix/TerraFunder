@@ -20,7 +20,7 @@ public class eventDeath implements Listener
         String _colorKiller = "WHITE";
         Player playerKiller = event.getEntity().getKiller();
         Player playerDeath = event.getEntity();
-
+        
         if(commandLaunch.Launch)
         {
             playerDeath.setGameMode(GameMode.SPECTATOR);
@@ -38,7 +38,7 @@ public class eventDeath implements Listener
             }
         }
         event.getDeathMessage();
-        if (playerKiller == null)
+        if (playerKiller.equals(null))
         {
             event.setDeathMessage("§c§l† " + ChatColor.valueOf(_colorVictim) + playerDeath.getDisplayName() + " est mort PVE comme une merde, sa Team l'a bannie §c§l†");
             World world = Bukkit.getWorld("world");

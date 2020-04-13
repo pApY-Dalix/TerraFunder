@@ -49,25 +49,25 @@ public class sbAll
             Score NbAttak = panel.getScore("§lAttaquant > " + MakeTeam.nbAttaquant());
             Score NbDef = panel.getScore("§6Defenseur > " + MakeTeam.nbDefender());
 
-            if (commandLaunch.Launch && !etatGames)
+            if (commandLaunch.Launch && !etatGames) //Si la commande "Launch" est true et que l'état de la game est false.
             {
-                i = 0;
-                l = 0;
-                day = 1;
-                tick = 20;
-                etatGames = true;
-                player.setStatistic(Statistic.PLAYER_KILLS, 0);
+                i = 0;  //Définie la variable "i" à 0.
+                l = 0;  //Définie la variable "l" à 0.
+                day = 1;    //Définie la variable "day" à 1.
+                tick = 20;  //Définie la variable "tick" à 20.
+                etatGames = true;  //Définie la variable "etatGames" à true.
+                player.setStatistic(Statistic.PLAYER_KILLS, 0); //Définie les kills du player à 0.
             }
-            else if (!commandLaunch.Launch && etatGames)
+            else if (!commandLaunch.Launch && etatGames)    //Sinon si la commande "Launch" est false et que l'état de la game est true.
             {
-                i = 0;
-                l = 0;
-                day = 1;
-                tick = 20;
-                etatGames = false;
+                i = 0;  //Définie la variable "i" à 0.
+                l = 0;  //Définie la variable "l" à 0.
+                day = 1;    //Définie la variable "day" à 1.
+                tick = 20;  //Définie la variable "tick" à 20.
+                etatGames = false;  //Définie la variable "etatGames" à false.
             }
 
-            if (l < 10 && i < 10)
+            if (l < 10 && i < 10)   //Permet d'afficher le temps en fonction selon l'ordre besoin.
             {
                 Timer = panel.getScore(ChatColor.DARK_AQUA + "Timer > 0" + l + ":0" + i);
 
@@ -84,63 +84,66 @@ public class sbAll
             {
                 Timer = panel.getScore(ChatColor.DARK_AQUA + "Timer > " + l + ":" + i);
             }
-            for (Team team : MakeTeam.getTeams())
+            for (Team team : MakeTeam.getTeams())   //Vérification team par team.
             {
-                if (team.getUuids().contains(player.getUniqueId()))
+                if (team.getUuids().contains(player.getUniqueId())) //Vérifie si le ID du player appartient à une team.
                 {
-                    _Team = panel.getScore(ChatColor.valueOf(team.getColor()) + team.getName() + " > " +(String.valueOf(team.getSize())));
+                    _Team = panel.getScore(ChatColor.valueOf(team.getColor()) + team.getName() + " > " +(String.valueOf(team.getSize()))); //Permet d'afficher la team du player.
                 }
             }
 
-            if (l >= tick)
+            if (l >= tick)  //Si le nombre de minutes est supérieur ou égal à la variable "tick".
             {
-                day++;
-                tick += 20;
+                day++;  //Incrémente +1 à la variable "day".
+                tick += 20; //Incrémente +20 à la variable "tick".
             }
-            if (oldDay != day)
+            if (oldDay != day)  //Si le jour actuelle est différent du jour sauvegardé
             {
-                World world = Bukkit.getWorld("world");
-                Bukkit.broadcastMessage("§b------ Fin du jour " + day + " -------");
-                Bukkit.broadcastMessage("  ");
-                lootChest.chest();
-                world.playSound(player.getLocation(), Sound.CAT_MEOW, 1.0F,1.0F);
-                if (day == 3)
+                World world = Bukkit.getWorld("world"); //Récupère dans une variable le nom du monde "World".
+                Bukkit.broadcastMessage("§b------ Fin du jour " + day + " -------");    //Création d'un message d'avertissement global avec le nombre de jours.
+                Bukkit.broadcastMessage("  ");  //Création d'un message d'espacement.
+                if (commandLaunch.Launch)   //Si la game est lancé.
                 {
-                    Bukkit.broadcastMessage("§c------ PVP Actif -------");
-                    Bukkit.broadcastMessage("  ");
+                    lootChest.chest();  //Création d'un coffre.
                 }
-                if (day == 4)
+                world.playSound(player.getLocation(), Sound.CAT_MEOW, 1.0F,1.0F);   //Création d'un son global de type "Chat" lors d'un nouveau jour.
+                if (day == 3)   //Si le jour est égal à 3
                 {
-                    Bukkit.broadcastMessage("§c------ Attaque du Château Disponible -------");
-                    Bukkit.broadcastMessage("  ");
+                    Bukkit.broadcastMessage("§c------ PVP Actif -------");  //Création d'un message d'avertissement global.
+                    Bukkit.broadcastMessage("  ");  //Création d'un message d'espacement.
                 }
-                if (day == 5)
+                if (day == 4)   //Si le jour est égal à 4.
                 {
-                    Bukkit.broadcastMessage("§c------ La Border Réduit -------");
-                    Bukkit.broadcastMessage("  ");
-                    border.borderCreate(300, world);
+                    Bukkit.broadcastMessage("§c------ Attaque du Château Disponible -------");  //Création d'un message d'avertissement global.
+                    Bukkit.broadcastMessage("  ");  //Création d'un message d'espacement.
                 }
-                oldDay = day;
+                if (day == 5)   //Si le jour est égal à 5.
+                {
+                    Bukkit.broadcastMessage("§c------ La Border Réduit -------");   //Création d'un message d'avertissement global.
+                    Bukkit.broadcastMessage("  ");  //Création d'un message d'espacement.
+                    border.borderCreate(300, world);    //Déplacement de la bordure du monde "World" en 300 blocs de diamètre.
+                }
+                oldDay = day;   //Récupération du jour dans une variable de sauvegarde.
             }
-            Separate.setScore(9);
-            if (!etatGames)
+            Separate.setScore(9);   //Ajoute le score "Separate" au niveau 9.
+            if (!etatGames) //Si l'état de la game est false.
             {
-                Info.setScore(8);
+                Info.setScore(8);   //Ajoute le score "Info" au niveau 8.
             }
-            else
+            else    //Sinon.
             {
-                Kill.setScore(8);
+                Kill.setScore(8);   //Ajoute le score "Kill" au niveau 8.
             }
-            Separated.setScore(7);
-            Timer.setScore(6);
-            Jours.setScore(5);
-            Separateed.setScore(4);
-            _Team.setScore(3);
-            NbAttak.setScore(2);
-            NbDef.setScore(1);
+            Separated.setScore(7);  //Ajoute le score "Separated" au niveau 7.
+            Timer.setScore(6);  //Ajoute le score "Timer" au niveau 6.
+            Jours.setScore(5);  //Ajoute le score "Jours" au niveau 5.
+            Separateed.setScore(4); //Ajoute le score "Separateed" au niveau 4.
+            _Team.setScore(3);  //Ajoute le score "_Team" au niveau 3.
+            NbAttak.setScore(2);    //Ajoute le score "NbAttack" au niveau 2.
+            NbDef.setScore(1);  //Ajoute le score "NbDef" au niveau 1.
 
-            player.setScoreboard(scoreboard);
+            player.setScoreboard(scoreboard);   //Ajoute le scoreboard au player.
         }
-        i++;
+        i++;    //Incrémente +1 à la variable "i".
     }
 }
