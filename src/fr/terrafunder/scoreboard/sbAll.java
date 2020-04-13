@@ -106,20 +106,23 @@ public class sbAll
                 {
                     lootChest.chest();  //Création d'un coffre.
                 }
-                world.playSound(player.getLocation(), Sound.CAT_MEOW, 1.0F,1.0F);   //Création d'un son global de type "Chat" lors d'un nouveau jour.
+                world.playSound(player.getLocation(), Sound.CAT_MEOW, 1000.0F,1.0F);   //Création d'un son global de type "Chat" lors d'un nouveau jour.
                 if (day == 3)   //Si le jour est égal à 3
                 {
                     Bukkit.broadcastMessage("§c------ PVP Actif -------");  //Création d'un message d'avertissement global.
+                    world.playSound(player.getLocation(), Sound.WOLF_GROWL,1000.0F,1.0F);
                     Bukkit.broadcastMessage("  ");  //Création d'un message d'espacement.
                 }
                 if (day == 4)   //Si le jour est égal à 4.
                 {
                     Bukkit.broadcastMessage("§c------ Attaque du Château Disponible -------");  //Création d'un message d'avertissement global.
+                    world.playSound(player.getLocation(), Sound.WOLF_GROWL,1000.0F,1.0F);
                     Bukkit.broadcastMessage("  ");  //Création d'un message d'espacement.
                 }
                 if (day == 5)   //Si le jour est égal à 5.
                 {
                     Bukkit.broadcastMessage("§c------ La Border Réduit -------");   //Création d'un message d'avertissement global.
+                    world.playSound(player.getLocation(), Sound.ANVIL_BREAK,1000.0F,1.0F);
                     Bukkit.broadcastMessage("  ");  //Création d'un message d'espacement.
                     border.borderCreate(300, world);    //Déplacement de la bordure du monde "World" en 300 blocs de diamètre.
                 }

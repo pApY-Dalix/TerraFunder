@@ -46,7 +46,7 @@ public class Terrafunder extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new eventCancelDeath(), this);
         saveDefaultConfig();
         WorldBorder worldBorder = Bukkit.getWorld("world").getWorldBorder();
-        worldBorder.setSize(2000);
+        worldBorder.setSize(1500);
         section = getConfig().getConfigurationSection("team");
         super.onEnable();
         for (Player player : Bukkit.getOnlinePlayers())
