@@ -28,7 +28,8 @@ public class Terrafunder extends JavaPlugin {
         getCommand("Launch").setExecutor(new commandLaunch());
         getCommand("Configure").setExecutor(new commandConfigure());
         getCommand("Alert").setExecutor(new commandAlert());
-        getCommand("Addplayer").setExecutor(new commandAddPlayer());
+        getCommand("AddPlayer").setExecutor(new commandAddPlayer());
+        getCommand("RemovePlayer").setExecutor(new commandRemovePlayer());
         getCommand("Border").setExecutor(new commandBorder());
         getCommand("Chest").setExecutor(new commandCreateChest());
         getCommand("Day").setExecutor(new commandDay());

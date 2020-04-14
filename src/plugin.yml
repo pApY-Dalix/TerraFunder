@@ -15,9 +15,13 @@ commands:
     description: Permet de créer une Alerte
     usage: /Alert <arguments>
     permission: perm.use
-  Addplayer:
+  AddPlayer:
     description: Permet de rajouter un player à une team
-    usage: /AddPlayer <Team> <Player>
+    usage: /RemovePlayer <Team> <Player>
+    permission: perm.use
+  RemovePlayer:
+    description: Permet de rajouter un player à une team
+    usage: /RemovePlayer <Player>
     permission: perm.use
   Border:
     description: Permet de situer la bordure
